@@ -26,11 +26,13 @@ services:
         MYSQL_ROOT_PASSWORD: admin
 
    ps1:
+     build:
+       context: .
+       dockerfile: Dockerfile
      depends_on:
        - ps1_db
-     image: prestashop/prestashop:1.7.1.0
      ports:
-       - "8080:80"
+       - 443:443
      restart: always
      environment:
        PS_INSTALL_AUTO: 0
@@ -40,6 +42,6 @@ services:
        DB_PASSWD: ps
        DB_NAME: ps
        PS_DEV_MODE: 0
-       PS_DOMAIN: localhost:8080
+       PS_DOMAIN: localhost:443
      volumes:
        - ./src:/var/www/html

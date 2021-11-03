@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2021-10-29 22:36:14
+<?php /* Smarty version Smarty-3.1.19, created on 2021-11-03 13:45:23
          compiled from "module:ps_imageslider/views/templates/hook/slider.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:303017468617c5b3e397595-02112394%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:97569985561828463803790-39125459%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'module',
     ),
   ),
-  'nocache_hash' => '303017468617c5b3e397595-02112394',
+  'nocache_hash' => '97569985561828463803790-39125459',
   'function' => 
   array (
   ),
@@ -22,9 +22,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_617c5b3e3dadb0_62762283',
+  'unifunc' => 'content_6182846382dec1_72207560',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_617c5b3e3dadb0_62762283')) {function content_617c5b3e3dadb0_62762283($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_6182846382dec1_72207560')) {function content_6182846382dec1_72207560($_smarty_tpl) {?>
 
 <?php if ($_smarty_tpl->tpl_vars['homeslider']->value['slides']) {?>
   <div id="carousel" data-ride="carousel" class="carousel slide hidden-sm-down" data-interval="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['homeslider']->value['speed'], ENT_QUOTES, 'UTF-8');?>
