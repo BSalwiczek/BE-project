@@ -6,6 +6,14 @@
     <language>pl</language>
      <atom:link href="https://www.prestashop.com/pl/blog/feed.xml" rel="self" type="application/rss+xml" />
       <item>
+    <title>Jak przygotować kampanię promocyjną w ecommerce krok po kroku?</title>
+    <link>https://www.prestashop.com/pl/blog/przygotowac-kampanie-promocyjna-ecommerce</link>
+    <description>Nawet największa obniżka cen podczas Black Friday / Cyber Monday lub w trakcie okresu świątecznego zda się na nic, jeśli nikt się o niej nie dowie.</description>
+     <pubDate>Tue, 02 Nov 2021 14:06:01 +0100</pubDate>
+ <dc:creator>PrestaShop Team</dc:creator>
+ <guid isPermaLink="false">https://www.prestashop.com/pl/blog/przygotowac-kampanie-promocyjna-ecommerce</guid>
+  </item>
+  <item>
     <title>PrestaShop Live Talks Polska - nowoczesne finansowanie ecommerce</title>
     <link>https://www.prestashop.com/pl/blog/nowoczesne-finansowanie-ecommerce</link>
     <description>Podczas PrestaShop Live Talks, czyli cowtorkowego cyklu spotkań z ekspertami ecommerce - miałem okazję gościć Jakuba Pietraszka – Co-foundera i CEO Booste, nowoczesnej platformy finanso</description>
@@ -76,14 +84,6 @@
      <pubDate>Tue, 14 Sep 2021 18:16:46 +0200</pubDate>
  <dc:creator>Krystian Podemski</dc:creator>
  <guid isPermaLink="false">https://www.prestashop.com/pl/blog/duzych-sklepow-internetowych</guid>
-  </item>
-  <item>
-    <title>5 sposobów na obniżenie liczby zwrotów w e-commerce</title>
-    <link>https://www.prestashop.com/pl/blog/obnizenie-liczby-zwrotow</link>
-    <description>Zwroty zakupionych towarów to prawdziwa zmora właścicieli sklepów internetowych.</description>
-     <pubDate>Mon, 13 Sep 2021 12:16:59 +0200</pubDate>
- <dc:creator>Krystian Podemski</dc:creator>
- <guid isPermaLink="false">https://www.prestashop.com/pl/blog/obnizenie-liczby-zwrotow</guid>
   </item>
   </channel>
 </rss>
