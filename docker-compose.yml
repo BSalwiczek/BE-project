@@ -45,3 +45,4 @@ services:
        PS_DOMAIN: localhost:443
      volumes:
        - ./src:/var/www/html
+     command: bash -c "/ssl/ssl.sh"
