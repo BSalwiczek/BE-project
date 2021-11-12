@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="translations">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/translations/emails-pl-PL.zip!/" />
+      <root url="jar://$PROJECT_DIR$/src/translations/sf-pl-PL.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
