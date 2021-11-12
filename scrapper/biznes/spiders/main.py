@@ -67,7 +67,7 @@ class CourseraSpider(scrapy.Spider):
                     productUrl += i['objectUrl']
                     productUrls.append(productUrl)
                     global j
-                    urllib.request.urlretrieve(i['imageUrl'], "productImage" + str(j) + ".jpg")
+                    # urllib.request.urlretrieve(i['imageUrl'], "productImage" + str(j) + ".jpg")
                     j += 1
 
                     isPartOfCourseraPluses.append(i['isPartOfCourseraPlus'])
@@ -98,6 +98,7 @@ class CourseraSpider(scrapy.Spider):
             numberOfProducts += 1
             yield response.follow(url, self.parse)
         else:
+            print(len(names))
             with open('scrapedData.csv', 'w', newline='', encoding="utf-8") as csvfile:
                 ProductWriter = csv.writer(csvfile, delimiter=';',
                                            quotechar='|', quoting=csv.QUOTE_MINIMAL)
