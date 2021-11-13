@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="core">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/src/translations/cldr/core.zip!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
