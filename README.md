@@ -11,6 +11,7 @@ sudo ./certificate.sh
 ```
 ~~You only need to do this once.~~
 TO BE DONE
+For now just add `cert/CA` certificate to trusted certificates in your browser
 
 ### Permissions
 All files have to be owned by `www-data`. In order to do that, run command in BE-project folder:
