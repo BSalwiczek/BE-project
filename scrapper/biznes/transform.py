@@ -4,7 +4,7 @@ from ast import literal_eval
 
 def getCategories(skills):
     resultArr = []
-    categories = ['Python', 'Algorithms', 'DevOps', 'Deep Learning', 'SQL','Javascript']
+    categories = ['DevOps', 'Algorithms', 'Web Development', 'Deep Learning', 'SQL','Javascript']
 
     for i in categories:
         if i in skills:
@@ -12,7 +12,7 @@ def getCategories(skills):
             break
 
     if len(resultArr) == 0:
-        resultArr.append('Other')
+        resultArr.append('Java')
 
     return ','.join(resultArr)
 
@@ -22,9 +22,10 @@ if __name__ == '__main__':
         writer.writerow(
             ['ProductID', 'Image', 'Image alt', 'Name', 'Tags', 'Base price', 'Final price',
              'Description', 'Discount percent', 'Available only online', 'Virtual product', 'Cecha(Nazwa:Wartość:Pozycja:Indywidualne)', 'Categories'])
-        with open('../scrapedData.csv') as inputCsv:
+        with open('../scrappedData.csv') as inputCsv:
             reader = csv.reader(inputCsv, delimiter=';', quotechar='|')
             for i, row in enumerate(reader):
+                print(row)
                 if i == 0:
                     continue
                 price = random.randint(10, 500)

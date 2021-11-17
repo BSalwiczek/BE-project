@@ -6,7 +6,7 @@ if __name__ == '__main__':
         writer = csv.writer(outputCsv, delimiter=';')
         writer.writerow(['Product ID', 'Attribute (Name:Type:Position)*', 'Value (Value:Position)*'])
 
-        with open('../scrapedData.csv') as scrapedCsv:
+        with open('../scrappedData.csv') as scrapedCsv:
             reader = csv.reader(scrapedCsv, delimiter=';', quotechar='|')
             for i, row in enumerate(reader):
                 if i == 0:

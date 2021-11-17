@@ -1481,7 +1481,7 @@ class FirePHP {
      * Programming Language, Standard ECMA-262 3rd Edition - December 1999.
      * This feature can also be found in  Python. JSON is a text format that is
      * completely language independent but uses conventions that are familiar
-     * to programmers of the C-family of languages, including C, C++, C#, Java,
+     * to programmers of the C-family of languages, including C, C++, CSharp, Java,
      * JavaScript, Perl, TCL, and many others. These properties make JSON an
      * ideal data-interchange language.
      *

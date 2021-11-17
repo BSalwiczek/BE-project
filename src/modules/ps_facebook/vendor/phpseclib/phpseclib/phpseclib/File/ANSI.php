@@ -297,7 +297,7 @@ class ANSI
                                 $this->x = $match[2] - 1;
                                 $this->y = $match[1] - 1;
                                 break;
-                            case preg_match('#\x1B\[(\d+)C#', $this->ansi, $match): // Move cursor right n lines
+                            case preg_match('#\x1B\[(\d+)CSharp', $this->ansi, $match): // Move cursor right n lines
                                 $this->old_x = $this->x;
                                 $this->x+= $match[1];
                                 break;
