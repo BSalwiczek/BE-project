@@ -57,7 +57,7 @@ public class Main {
     public static void main(String[] args) {
         FirefoxOptions firefoxOptions = new FirefoxOptions();
         firefoxOptions.setPageLoadStrategy(PageLoadStrategy.EAGER);
-        System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver.exe");
+        System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver");
 
         String email = "plsf@hourly.site";
         String name = "Tajemniczy";
@@ -89,7 +89,7 @@ public class Main {
                     .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".blockcart.cart-preview.active")));
             cart.click();
 
-            waitDriver.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".blockcart.cart-preview.active")));
+            waitDriver.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".material-icons.pull-xs-left")));
             List<WebElement> deletes = driver.findElements(By.cssSelector(".material-icons.pull-xs-left"));
 
             deletes.get(0).click();
