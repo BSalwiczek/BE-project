@@ -41,11 +41,24 @@ class CourseraSpider(scrapy.Spider):
     name = "coursera"
 
     def start_requests(self):
-        url = 'https://www.coursera.org/search?query=python&index=prod_all_launched_products_term_optimization'
+        url = 'https://www.coursera.org/search?query=java&index=prod_all_launched_products_term_optimization'
         yield scrapy.Request(url, self.parse)
 
     def parse(self, response):
         global numberOfProducts
+        global names
+        global descriptions
+        global isPartOfCourseraPluses
+        global subtitleLanguages
+        global productDifficultyLevels
+        global audiences
+        global enrollments
+        global partners
+        global languages
+        global numProductRatings
+        global allLanguageCodes
+        global avgProductRatings
+        global skills
         if numberOfProducts == 0:
             global page
             if page == 0:
@@ -61,36 +74,42 @@ class CourseraSpider(scrapy.Spider):
             json_object = json.loads(data_set)
             json_object = json_object['props']['pageProps']['resultsState'][2]['content']['_rawResults'][0]['hits']
             for i in json_object:
-                if i['entityType']=='COURSE':
-                    names.append(i['name'])
+                if (i['entityType']=='COURSE') & (i['language']!='Arabic'):
                     productUrl = 'https://www.coursera.org'
                     productUrl += i['objectUrl']
-                    productUrls.append(productUrl)
-                    global j
-                    urllib.request.urlretrieve(i['imageUrl'], "productImage" + str(j) + ".jpg")
-                    j += 1
+                    if (productUrl in productUrls) == False:
+                        names.append(i['name'].replace(';','').replace('|','').replace('\n', ' ').replace('\r', '').replace('\t', ' ').replace(';','').replace('|','').replace("\"",''))
+                        productUrls.append(productUrl)
+                        global j
+                        urllib.request.urlretrieve(i['imageUrl'], "productImage" + str(j) + ".jpg")
+                        j += 1
 
-                    isPartOfCourseraPluses.append(i['isPartOfCourseraPlus'])
-                    subtitleLanguages.append(i['subtitleLanguage'])
-                    productDifficultyLevels.append(i['productDifficultyLevel'])
-                    audiences.append(i['audience'])
-                    enrollments.append(i['enrollments'])
-                    partners.append(i['partners'])
-                    languages.append(i['language'])
-                    numProductRatings.append(i['numProductRatings'])
-                    allLanguageCodes.append(i['allLanguageCodes'])
-                    avgProductRatings.append(i['avgProductRating'])
-                    skills.append(i['skills'])
+                        isPartOfCourseraPluses.append(i['isPartOfCourseraPlus'])
+                        subtitleLanguages.append(i['subtitleLanguage'])
+                        productDifficultyLevels.append(i['productDifficultyLevel'])
+                        audiences.append(i['audience'])
+                        enrollments.append(i['enrollments'])
+                        partners.append(i['partners'])
+                        languages.append(i['language'])
+                        numProductRatings.append(i['numProductRatings'])
+                        allLanguageCodes.append(i['allLanguageCodes'])
+                        avgProductRatings.append(i['avgProductRating'])
+                        skills.append(i['skills'])
 
             page = page + 1
 
         else:
 
-            description = response.css('div.content-inner *::text').get()
-            descriptions.append(description)
+            description = response.css('div.content-inner:first-of-type *::text').getall()
+            descriptionText = ""
+            for d in description:
+                descriptionText += d
+                descriptionText += " "
+            descriptionText=descriptionText.replace('\n', ' ').replace('\r', '').replace('\t', ' ').replace(';','').replace('|','').replace("\"",'')
+            descriptions.append(descriptionText)
 
         if page < numberOfPagesGlobal:
-            url = 'https://www.coursera.org/search?query=python&page=' + str(
+            url = 'https://www.coursera.org/search?query=java&page=' + str(
                 page + 1) + '&index=prod_all_launched_products_term_optimization'
             yield response.follow(url, self.parse)
         elif numberOfProducts<j:
@@ -98,7 +117,7 @@ class CourseraSpider(scrapy.Spider):
             numberOfProducts += 1
             yield response.follow(url, self.parse)
         else:
-            with open('scrapedData.csv', 'w', newline='', encoding="utf-8") as csvfile:
+            with open('scrappedData.csv', 'w', newline='', encoding="utf-8") as csvfile:
                 ProductWriter = csv.writer(csvfile, delimiter=';',
                                            quotechar='|', quoting=csv.QUOTE_MINIMAL)
                 for i in range(len(names)):

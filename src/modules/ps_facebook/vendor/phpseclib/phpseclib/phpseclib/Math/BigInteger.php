@@ -735,7 +735,7 @@ class BigInteger
      * PHP5 passes objects by reference while PHP4 passes by value.  As such, we need a function to guarantee
      * that all objects are passed by value, when appropriate.  More information can be found here:
      *
-     * {@link http://php.net/language.oop5.basic#51624}
+     * {@link http://php.net/language.oop5.basiCSharp51624}
      *
      * @access public
      * @see self::__clone()
