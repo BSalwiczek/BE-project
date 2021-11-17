@@ -29,7 +29,7 @@ if __name__ == '__main__':
                     continue
                 price = random.randint(10, 500)
                 writer.writerow(
-                    [str(i - 1),
+                    [str(i),
                      '/var/www/html/img/products/productImage' + str(i - 1) + '.jpg',
                      row[0],
                      row[0],

@@ -13,6 +13,6 @@ if __name__ == '__main__':
                     continue
                 subtitleLangs = literal_eval(row[3])
                 if len(subtitleLangs) == 0:
-                    writer.writerow([str(i-1),'Język napisów:select:0', f'Brak:0'])
+                    writer.writerow([str(i),'Język napisów:select:0', f'Brak:0'])
                 for lang in subtitleLangs:
-                    writer.writerow([str(i-1),'Język napisów:select:0', f'{lang}:0'])
+                    writer.writerow([str(i),'Język napisów:select:0', f'{lang}:0'])
