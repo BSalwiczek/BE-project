@@ -9,6 +9,7 @@ def getCategories(skills):
     for i in categories:
         if i in skills:
             resultArr.append(i)
+            break
 
     if len(resultArr) == 0:
         resultArr.append('Other')
@@ -22,13 +23,13 @@ if __name__ == '__main__':
             ['ProductID', 'Image', 'Image alt', 'Name', 'Tags', 'Base price', 'Final price',
              'Description', 'Discount percent', 'Available only online', 'Virtual product', 'Cecha(Nazwa:Wartość:Pozycja:Indywidualne)', 'Categories'])
         with open('../scrapedData.csv') as inputCsv:
-            reader = csv.reader(inputCsv, delimiter=';')
+            reader = csv.reader(inputCsv, delimiter=';', quotechar='|')
             for i, row in enumerate(reader):
                 if i == 0:
                     continue
                 price = random.randint(10, 500)
                 writer.writerow(
-                    [str(i - 1),
+                    [str(i),
                      '/var/www/html/img/products/productImage' + str(i - 1) + '.jpg',
                      row[0],
                      row[0],
