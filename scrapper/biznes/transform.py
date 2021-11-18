@@ -38,7 +38,7 @@ if __name__ == '__main__':
                      str(price),
                      str(price + price * 0.23),
                      row[1],
-                     '20' if i == 22 else price > 100 else '10',
+                     '20' if i == 22 else if price > 100 else '10',
                      '1',
                      f'Długość kursu:{random.randint(2,50)}h:1|2',
                      getCategories(literal_eval(row[-1])),
