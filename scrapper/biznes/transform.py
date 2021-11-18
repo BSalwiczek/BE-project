@@ -21,7 +21,7 @@ if __name__ == '__main__':
         writer = csv.writer(outputCsv, delimiter=';')
         writer.writerow(
             ['ProductID', 'Image', 'Image alt', 'Name', 'Tags', 'Base price', 'Final price',
-             'Description', 'Discount percent', 'Available only online', 'Virtual product', 'Cecha(Nazwa:Wartość:Pozycja:Indywidualne)', 'Categories'])
+             'Description', 'Discount percent', 'Virtual product', 'Cecha(Nazwa:Wartość:Pozycja:Indywidualne)', 'Categories', 'Amount'])
         with open('../scrappedData.csv') as inputCsv:
             reader = csv.reader(inputCsv, delimiter=';', quotechar='|')
             for i, row in enumerate(reader):
@@ -40,6 +40,8 @@ if __name__ == '__main__':
                      row[1],
                      '0' if price > 100 else '10',
                      '1',
-                     '1',
                      f'Długość kursu:{random.randint(2,50)}h:1|2',
-                     getCategories(literal_eval(row[-1]))])
+                     getCategories(literal_eval(row[-1])),
+                     '1000000',
+                     ]
+                )

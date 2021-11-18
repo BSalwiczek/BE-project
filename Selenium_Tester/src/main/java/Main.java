@@ -59,7 +59,7 @@ public class Main {
         firefoxOptions.setPageLoadStrategy(PageLoadStrategy.EAGER);
         System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver");
 
-        String email = "plsf@hourly.site";
+        String email = "plsf@hourly2.site";
         String name = "Tajemniczy";
         String surname = "Klient";
         String password = "12345678";
@@ -79,8 +79,8 @@ public class Main {
                     .until(webDriver -> webDriver.findElement(By.id("top-menu")));
             List<WebElement> ids = categories.findElements(By.tagName("li"));
 
-            int firstCategory = Integer.parseInt(ids.get(2).getAttribute("id").split("-")[1]);
-            int secondCategory = Integer.parseInt(ids.get(3).getAttribute("id").split("-")[1]);
+            int firstCategory = Integer.parseInt(ids.get(0).getAttribute("id").split("-")[1]);
+            int secondCategory = Integer.parseInt(ids.get(1).getAttribute("id").split("-")[1]);
 
             addProductsFromCategory(driver, firstCategory, 5);
             addProductsFromCategory(driver, secondCategory, 5);
