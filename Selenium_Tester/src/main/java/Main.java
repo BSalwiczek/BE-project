@@ -59,7 +59,7 @@ public class Main {
         firefoxOptions.setPageLoadStrategy(PageLoadStrategy.EAGER);
         System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver");
 
-        String email = "plsf@hourly4gg.site";
+        String email = "plsf@hourly4g.site";
         String name = "Tajemniczy";
         String surname = "Klient";
         String password = "12345678";
